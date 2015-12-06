@@ -46,6 +46,10 @@ endif
    zreladdr-$(CONFIG_ARCH_APQ8064)	:= 0x80208000
 
 # MSM8974
+ifeq ($(CONFIG_MACH_LGE),y)
+        dtb-$(CONFIG_MACH_MSM8926_F70N_GLOBAL_COM) += msm8226-v1-f70n.dtb \
+							msm8226-f70n_global_com-v2.dtb
+else
    zreladdr-$(CONFIG_ARCH_MSM8974)	:= 0x00008000
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974-v1-cdp.dtb
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974-v1-fluid.dtb
@@ -76,6 +80,7 @@ endif
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pm8941-liquid.dtb
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pm8941-mtp.dtb
         dtb-$(CONFIG_ARCH_MSM8974)	+= msm8974pro-ac-pma8084-pm8941-mtp.dtb
+endif
 
 # APQ8084
    zreladdr-$(CONFIG_ARCH_APQ8084)	:= 0x00008000
@@ -100,18 +105,12 @@ endif
 
 # MSM8226
    zreladdr-$(CONFIG_ARCH_MSM8226)	:= 0x00008000
-
 ifeq ($(CONFIG_MACH_LGE),y)
-        dtb-$(CONFIG_MACH_MSM8226_F70N_GLOBAL_COM) += msm8226-f70n.dtb 
-							
-
 else # not CONFIG_MACH_LGE
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-sim.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-fluid.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-cdp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-w-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-mtp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-w-mtp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-qrd-evt.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v1-qrd-dvt.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v2-720p-cdp.dtb
@@ -127,9 +126,6 @@ else # not CONFIG_MACH_LGE
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v1-qrd.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v1-qrd-skug.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v1-qrd-skug-pvt.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)       += msm8926-v1-320p-w-cdp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)       += msm8926-v1-320p-w-mtp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)       += msm8926-v1-320p-w-g.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v2-720p-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v2-1080p-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8926-v2-1080p-ext-buck-cdp.dtb
@@ -143,15 +139,12 @@ else # not CONFIG_MACH_LGE
 	dtb-$(CONFIG_ARCH_MSM8226)	+= msm8226-v2-qrd-skuf.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v1-xpm.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v1-cdp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v1-w-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v1-mtp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v1-w-mtp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-xpm.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-720p-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-1080p-cdp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-720p-mtp.dtb
 	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-1080p-mtp.dtb
-	dtb-$(CONFIG_ARCH_MSM8226)	+= apq8026-v2-320p-w-g-mtp.dtb
 endif # not CONFIG_MACH_LGE
 
 # FSM9XXX
