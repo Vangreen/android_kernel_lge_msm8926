@@ -18,7 +18,15 @@
 /include/ "msm8226-f70n-pm.dtsi"
 /include/ "msm8226-f70n-camera.dtsi"
 /include/ "msm8226-f70n-input.dtsi"
-/include/ "msm8226-f70n-nfc.dtsi"  /* LGE_CHANGE, [NFC][ljk2231.lee@lge.com], NFC Bring up */
+/* /include/ "msm8226-f70n-nfc.dtsi"  /* LGE_CHANGE, [NFC][ljk2231.lee@lge.com], NFC Bring up */ 
+
+/{
+        memory {
+                secure_mem: secure_region {
+                        status = "disabled";
+                };
+	};
+};
 
 &soc {
 	serial@f991f000 {
