@@ -4,22 +4,17 @@
  * it under the terms of the GNU General Public License version 2 and
  * only version 2 as published by the Free Software Foundation.
  *
- * /include/ "msm8226-lge-common/msm8926-lge.dtsi" - old
- * /include/ "msm8226-f70n_global_com/msm8226-f70n.dtsi" - old
- *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  */
 
-
-
-/include/ "../msm8226-lge-common/msm8226-v1-lge.dtsi"
+/include/ "../msm8226-lge-common/msm8926-lge.dtsi"
 /include/ "msm8226-f70n.dtsi"
 
 / {
-	model = "Qualcomm MSM 8926v1 f70nopeneu";
+	model = "Qualcomm MSM 8926 f70nopeneu";
 	compatible = "qcom,msm8926-f70nopeneu", "qcom,msm8926", "qcom,mtp";
 	qcom,board-id = <141 0>;
 };
